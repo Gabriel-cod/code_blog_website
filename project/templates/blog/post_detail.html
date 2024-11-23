@@ -1,0 +1,15 @@
+{% extends 'shared/base.html' %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <h4>{{ post.subtitle }}</h5>
+    <img src="{{ post.image.url }}" alt="" class="img-fluid my-4">
+    <p class="h5 my-4 text-start" style="line-height: 2rem;">{{ post.content }}</p>
+    <p class="text-end"><cite title="CreatedBy">Created at {{ post.data_creation }} by {{ post.author }}</cite></p>
+    {% if user.is_authenticated %}
+    <div>
+        <a href="{% url 'post_update' post.pk %}" class="btn btn-primary w-25">Edit</a>
+        <a href="{%  url 'post_delete' post.pk %}" class="btn btn-danger w-25">Delete</a>
+    </div>
+    {% endif %}
+{% endblock %}

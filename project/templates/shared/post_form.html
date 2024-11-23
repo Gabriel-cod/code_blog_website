@@ -1,0 +1,20 @@
+<form action="" method="post" enctype="multipart/form-data" class="mt-5">
+    {% csrf_token %}
+    <div class="input-group">
+        <label for="" class="input-group-text w-25">Title</label>
+        {{ form.title }}
+    </div>
+    <div class="input-group">
+        <label for="" class="input-group-text w-25">Subtitle</label>
+        {{ form.subtitle }}
+    </div>
+    <div class="input-group">
+        <label for="" class="input-group-text w-25">Content</label>
+        {{ form.content }}
+    </div>
+    <div class="input-group mt-3">
+        <label for="" class="input-group-text w-25">Image</label>
+        {{ form.image }}
+    </div>
+    <button type="submit" class="btn btn-primary mt-4 w-100">Submit</button>
+</form>
